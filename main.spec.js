@@ -1,45 +1,74 @@
 import { weekFn, ageClassification } from "./main.js";
 
-describe('day\'s of week', () => {
-    it('day of week Monday', () => {
+describe('function weekFn', () => {
+    it('return "Понеділок" for value "1"', () => {
         expect(weekFn(1)).toBe('Понеділок');
     });
 
-    it('day of week Wednesday', () => {
+
+    it('return "Середа" for value "3"', () => {
         expect(weekFn(3)).toBe('Середа');
     });
 
-    it('day of week Sunday', () => {
+
+    it('return "Неділя" for value "7"', () => {
         expect(weekFn(7)).toBe('Неділя');
     });
 
-    it('not day of week', () => {
+
+    it('return null for value "9" because week have 7 days', () => {
         expect(weekFn(9)).toBeNull();
-        expect(weekFn(1.5)).toBeNull();
+    })
+
+
+    it('return null for string value because value can\'t be string', () => {
         expect(weekFn('2')).toBeNull();
+    })
+
+
+    it('return null for value "1.5" because value must be integer', () => {
+        expect(weekFn(1.5)).toBeNull();
     })
 })
 
-describe('people age\'s', () => {
-    it('valid age', () => {
+
+describe('function ageClassification', () => {
+    it('return "Дитинство" for value "1"', () => {
         expect(ageClassification(1)).toBe('Дитинство');
+    })
+
+
+    it('return "Молодість" for value "25"', () => {
         expect(ageClassification(25)).toBe('Молодість');
+    })
+
+
+    it('return "Зрілість" for value "45"', () => {
         expect(ageClassification(45)).toBe('Зрілість');
     })
 
-    it('invalid age', () => {
+
+    it('return "null" for value "-1"', () => {
         expect(ageClassification(-1)).toBeNull();
+    })
+
+
+    it('return "null" for value "0"', () => {
         expect(ageClassification(0)).toBeNull();
+    })
+
+
+    it('return "null" for value "125"', () => {
         expect(ageClassification(125)).toBeNull();
     })
 
-    it('truth valid', () => {
+
+    it('return "truth" for "-1 === null"', () => {
         expect(ageClassification(-1) === null).toBeTruthy();
-        expect(ageClassification(20) === 'Дитинство').toBeTruthy();
     })
 
-    it('falsy valid', () => {
-        expect(ageClassification(-1) === 'Дитинство').toBeFalsy();
-        expect(ageClassification(20) === null).toBeFalsy();
+
+    it('return "truth" for "20 === Дитинство"', () => {
+        expect(ageClassification(20) === 'Дитинство').toBeTruthy();
     })
 })
