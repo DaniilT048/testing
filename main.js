@@ -1,4 +1,4 @@
-function weekFn(day) {
+export function weekFn(day) {
     switch (day) {
         case 1 : return 'Понеділок';
         case 2 : return 'Вівторок';
@@ -10,14 +10,6 @@ function weekFn(day) {
         default : return null;
     }
 }
-
-
-// console.log(weekFn(1))   // 'Понеділок'
-// console.log(weekFn(3))   // 'Середа'
-// console.log(weekFn(7))   // 'Неділя'
-// console.log(weekFn(9))   // null
-// console.log(weekFn(1.5)) // null
-// console.log(weekFn('2')) // null
 
 
 function ageClassification(age) {
