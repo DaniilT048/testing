@@ -12,7 +12,7 @@ export function weekFn(day) {
 }
 
 
-function ageClassification(age) {
+export function ageClassification(age) {
     switch (true) {
         case age <=0: return null;
         case age <= 24: return 'Дитинство';
